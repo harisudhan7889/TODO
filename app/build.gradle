@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.todolist"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            buildConfigField "String", 'TODO_BASE_URL', '"https://jsonplaceholder.typicode.com/"'
+        }
+        release {
+            buildConfigField "String", 'TODO_BASE_URL', '"https://jsonplaceholder.typicode.com/"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //RxJava2 and RxAndroid2
+    implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxJavaVer}"
+    implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroidVer}"
+
+    // Retrofit2
+    implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofitVer}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext.retrofitVer}"
+    implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.retrofitVer}"
+
+    // Dagger 2
+    implementation "com.google.dagger:dagger:${rootProject.ext.dagger2Ver}"
+    kapt "com.google.dagger:dagger-compiler:${rootProject.ext.dagger2Ver}"
+    kapt "com.google.dagger:dagger-android-processor:${rootProject.ext.dagger2Ver}"
+    implementation "com.google.dagger:dagger-android:${rootProject.ext.dagger2Ver}"
+    implementation "com.google.dagger:dagger-android-support:${rootProject.ext.dagger2Ver}"
+
+    // Architecture components
+    implementation "android.arch.lifecycle:runtime:${rootProject.ext.archVersion}"
+    implementation "android.arch.lifecycle:extensions:${rootProject.ext.archVersion}"
+    kapt "android.arch.lifecycle:compiler:${rootProject.ext.archVersion}"
+    implementation "android.arch.persistence.room:runtime:${rootProject.ext.archVersion}"
+    kapt "android.arch.persistence.room:compiler:${rootProject.ext.archVersion}"
+    implementation "android.arch.persistence.room:rxjava2:${rootProject.ext.archVersion}"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:${rootProject.ext.timberVersion}"
+}

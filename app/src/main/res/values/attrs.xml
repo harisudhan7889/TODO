@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="todoList" format="reference"/>
+    <attr name="todoToolbar" format="reference"/>
+    <attr name="todoListItemTitle" format="reference"/>
+    <attr name="todoSplashImage" format="reference"/>
+</resources>

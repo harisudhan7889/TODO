@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom Light Theme -->
+    <style name="LightMaterialTheme" parent="AppTheme.NoActionBar">
+        <item name="todoToolbar">@style/LightThemeToolbar</item>
+        <item name="todoList">@style/LightThemeList</item>
+        <item name="todoListItemTitle">@style/LightThemeTitle</item>
+        <item name="todoSplashImage">@style/LightThemeSplashImage</item>
+    </style>
+
+    <!-- Custom Dark Theme -->
+    <style name="DarkMaterialTheme" parent="AppTheme.NoActionBar">
+        <item name="todoToolbar">@style/DarkThemeToolbar</item>
+        <item name="todoList">@style/DarkThemeList</item>
+        <item name="todoListItemTitle">@style/DarkThemeTitle</item>
+        <item name="todoSplashImage">@style/DarkThemeSplashImage</item>
+    </style>
+</resources>

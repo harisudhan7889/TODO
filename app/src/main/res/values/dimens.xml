@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TodoList -->
+    <dimen name="todo_status_image_size">24dp</dimen>
+    <dimen name="todo_divider_margin_left">50dp</dimen>
+    <dimen name="todo_divider_margin_right">20dp</dimen>
+    <dimen name="todo_detail_thumbnail_size">100dp</dimen>
+    <dimen name="todo_detail_top_margin">4dp</dimen>
+    <dimen name="todo_list_item_height">50dp</dimen>
+
+    <!-- Common -->
+    <dimen name="todo_toolbar_elevation">4dp</dimen>
+    <dimen name="todo_margin_large">16dp</dimen>
+    <dimen name="todo__margin_medium">12dp</dimen>
+    <dimen name="todo_margin_small">8dp</dimen>
+    <dimen name="todo_margin_very_small">4dp</dimen>
+    <dimen name="todo_card_elevation_small">4dp</dimen>
+
+    <!-- Scaled pixels -->
+    <dimen name="todo_text_size_large">20sp</dimen>
+    <dimen name="todo_text_size_h_medium">16sp</dimen>
+    <dimen name="todo_text_size_medium">14sp</dimen>
+    <dimen name="todo_text_size_small">12sp</dimen>
+</resources>

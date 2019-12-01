@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ToDo List</string>
+    <string name="todo_no_title">No title available</string>
+</resources>

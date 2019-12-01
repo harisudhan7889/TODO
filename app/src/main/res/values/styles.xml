@@ -1,0 +1,66 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="colorPrimaryDark">@android:color/black</item>
+        <item name="colorAccent">@color/todoPaleYellow</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Custom Light Theme -->
+    <style name="LightThemeSplashImage">
+        <item name="android:src">@drawable/ic_todo_launcher_light</item>
+    </style>
+
+    <style name="LightThemeToolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@color/todoPink</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_close_white_24dp</item>
+    </style>
+
+    <style name="LightThemeList">
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="LightThemeTitle">
+        <item name="android:textSize">@dimen/todo_text_size_h_medium</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">2</item>
+    </style>
+    <!-- End of Custom Light Theme -->
+
+    <!-- Custom Dark Theme -->
+    <style name="DarkThemeSplashImage">
+        <item name="android:src">@drawable/ic_todo_launcher</item>
+    </style>
+
+    <style name="DarkThemeToolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@color/todoPaleGreen</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_close_white_24dp</item>
+    </style>
+
+    <style name="DarkThemeList">
+        <item name="android:background">@color/todoPaleYellow</item>
+    </style>
+
+    <style name="DarkThemeTitle">
+        <item name="android:textSize">@dimen/todo_text_size_h_medium</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">2</item>
+    </style>
+    <!-- End of Dark Theme -->
+
+</resources>
