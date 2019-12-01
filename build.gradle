@@ -24,6 +24,10 @@ allprojects {
 }
 
 ext {
+    junitVer = "4.12"
+    androidXJunitVer = "1.1.1"
+    espressoVer = "3.2.0"
+    appcompatVer = "1.1.0"
     rxJavaVer = "2.2.13"
     rxAndroidVer = "2.1.1"
     retrofitVer = "2.6.2"
