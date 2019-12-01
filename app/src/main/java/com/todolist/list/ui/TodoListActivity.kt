@@ -4,17 +4,15 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.todolist.R
 import com.todolist.common.di.ContextModule
-import com.todolist.common.viewmodel.TodoViewModel
 import com.todolist.common.model.TodoData
 import com.todolist.common.recyler.CustomDividerDecorator
 import com.todolist.common.recyler.OnItemClickListener
 import com.todolist.common.ui.BaseActivity
+import com.todolist.common.viewmodel.TodoViewModel
 import com.todolist.list.di.DaggerTodoListComponent
-import com.todolist.list.viewmodel.TodoListViewModelFactory
 import kotlinx.android.synthetic.main.activity_todo_list.*
 import javax.inject.Inject
 
@@ -24,9 +22,7 @@ import javax.inject.Inject
 class TodoListActivity : BaseActivity(), OnItemClickListener<TodoData> {
 
     @Inject
-    lateinit var todoViewModelFactory: TodoListViewModelFactory
-
-    private var todoListViewModel: TodoViewModel? = null
+    lateinit var todoListViewModel: TodoViewModel
     private var todoListAdapter: TodoListAdapter? = null
 
     companion object {
@@ -45,7 +41,7 @@ class TodoListActivity : BaseActivity(), OnItemClickListener<TodoData> {
 
     override fun onResume() {
         super.onResume()
-        todoListViewModel?.getTodoListFromRemote()
+        todoListViewModel.getTodoListFromRemote()
     }
 
     override fun onItemClicked(item: TodoData?) {
@@ -87,10 +83,9 @@ class TodoListActivity : BaseActivity(), OnItemClickListener<TodoData> {
      * Room Db live data listener.
      */
     private fun addLiveDataListener() {
-        todoListViewModel = ViewModelProvider(this, todoViewModelFactory).get(TodoViewModel::class.java)
         todoListViewModel
-            ?.getTodoListFromDB()
-            ?.observe(this, Observer<List<TodoData>> { todoList ->
+            .getTodoListFromDB()
+            .observe(this, Observer<List<TodoData>> { todoList ->
                 if(todoList?.isNotEmpty() == true) {
                     todoListAdapter?.setItems(todoList as? ArrayList<TodoData>)
                 }
